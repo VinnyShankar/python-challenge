@@ -13,8 +13,13 @@ with open(file_path) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
     #For each row in the variable, print it to the terminal
-    for row in csvreader:
-        print(row)
+    #for row in csvreader:
+        #print(row)
+#Skip the header row by using the 'next' function (skip this step if there is no header)
+    csv_header = next(csvreader)
+
+    #Print the header
+    print(f"CSV Header: {csv_header}")
 
 # Create two empty lists
 # Read the csv and append the values in the empty list
