@@ -4,6 +4,8 @@ import csv
 #specify the filepath
 filepath = "Resources/election_data.csv"
 
+rows = 0
+
 #Open the csv
 with open(filepath) as csvfile:
 
@@ -14,6 +16,12 @@ with open(filepath) as csvfile:
     csvheader = next(csvreader)
 
     print(csvheader)
+
+    for row in open(filepath):
+        rows = rows + 1
+    
+    print(rows)
+
 
 #Count the total number of votes (just like number of months from the budget csv)
 
