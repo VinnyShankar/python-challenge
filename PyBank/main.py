@@ -74,6 +74,18 @@ diftotal = 0
 #Create a variable to store how many times we calculated a difference
 numdiff = 0
 
+#Create a variable to store the greatest increase in profits (largest difference)
+greatestincrease = 0
+
+#Create a variable to store the month of the greatest increase in profits
+greatestincreasemonth = 0
+
+#Create a variable to store the greatest decrease in profits (smallest difference)
+greatestdecrease = 0
+
+#Create a variable to store the month of the greatest increase in profits
+greatestdecreasemonth = 0
+
 #Loop through each index in the Profit/Losses list, starting with the second index
 #For each index in the loop
 for cabbage in range(1,len(pl)):
@@ -86,14 +98,32 @@ for cabbage in range(1,len(pl)):
     diff = (int(pl[cabbage])-int(pl[cabbage-1]))
     diftotal = diftotal + diff
 
+    #If the stored differnce is greater than the stored greatest increase in profits
+    if diff > greatestincrease:
+
+        #Overwrite the greatest increase in profits with the stored difference
+        greatestincrease = diff
+
+        #Overwrite the greatest increase month
+        greatestincreasemonth = str(date[cabbage])
+    
+    #If the stored difference is smaller than the stored greatest decrease in profits
+    elif diff < greatestdecrease:
+
+        #Overwrite the greatest decrease in profits with the stored difference
+        greatestdecrease = diff
+
+        #Overwrite the greatest decrease month
+        greatestdecreasemonth = str(date[cabbage])
+
     #Add one to the number of differences we calculated
     numdiff = numdiff + 1
 
 #Print the sum of the differences
-print(diftotal)
+#print(diftotal)
 
 #Print the number of differences we calculated
-print(numdiff)
+#print(numdiff)
 
 #Calculate the average change rounded to two decimals
 #Store the average change in a new variable "avgchng"
@@ -101,6 +131,12 @@ avgchng = round(diftotal/numdiff, 2)
 
 #Print the average change
 print(f"Average change: ${avgchng}")
+
+#Print the greatest increase in profits month and value
+print(f"Greatest Increase in Profits: {greatestincreasemonth} (${greatestincrease})")
+
+#Print the greatest decrease in profits month and value
+print(f"Greatest Decrease in Profits: {greatestdecreasemonth} (${greatestdecrease})")
 
 
 # Create two empty lists

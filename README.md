@@ -2,7 +2,7 @@
 
 ### - Overview
 - Module 3 Python Challenge files
-- Author: Vinayak Shankar
+- Author: Vinny Shankar
 - Program: University of California Berkeley Data Analytics Bootcamp
 ### - Contents
 - Folder PyBank: 1 python script, 1 .csv data file, 1 .txt results file
