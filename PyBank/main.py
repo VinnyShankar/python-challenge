@@ -8,28 +8,32 @@ file_path = "Resources/budget_data.csv"
 
 #Create two empty lists into which we will store the csv data
 
-#This list will hold the Date column values from the csv
+#The "date" list will hold the Date column values from the csv
 date = []
 
-#This list will hold the Profit/Losses column values from the csv
+#The "pl" list will hold the Profit/Losses column values from the csv
 pl = []
 
-#Open the csv and store it in a new variable csvfile
+#Open the csv and store it in a new variable "csvfile"
 with open(file_path) as csvfile:
 
-    #Read the file with comma as delimiter and store it in a new variable csvreader
+    #Read the file with comma as delimiter and store it in a new variable "csvreader"
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    #For each row in the variable, print it to the terminal
+    #For each row in the variable "csvreader", print it to the terminal
     #for row in csvreader:
         #print(row)
 
-    #Skip the header row by using the 'next' function (skip this step if there is no header)
+    #Use the "next" function on "csvreader" to store the header in a new variable "csv_header"
+    #This step lets us skip the header for all subsequent data analysis
     csv_header = next(csvreader)
 
     #Print the header
     #print(f"CSV Header: {csv_header}")
 
+    #Example:
+    #row1: 0,1
+    #row2: 0,1
     #Loop through each row of data in the csv file we just read
     #For each row in the loop
     for row in csvreader:
@@ -41,26 +45,63 @@ with open(file_path) as csvfile:
         pl.append(row[1])
     
     #Print how many months are in the Date list
-    print(len(date))
+    print(f"Total Months: {len(date)}")
 
 #Create a variable to store the sum of the items in the Profit/Losses list
 total = 0
 
-#For each index in the Profit/Losses list
+#Loop through each index in the Profit/Losses list
+#For each index in the loop
 for cabbage in range(0, len(pl)):
 
     #Convert the value in that index to an integer
-    #and add that integer to the "total" variable
+    #Add that integer to the current "total" variable
+    #Overwrite the current "total" with this sum
     total = total + int(pl[cabbage])
 
 #Print the total sum of the values in the Profit/Losses list
-print(total)
+print(f"Total: ${total}")
 
     #Print the list of Dates
     #print(date)
 
     #Print the list of Profit/Losses
     #print(pl)
+
+#Create a variable to store the sum of the differences from the Profit/Losses list
+diftotal = 0
+
+#Create a variable to store how many times we calculated a difference
+numdiff = 0
+
+#Loop through each index in the Profit/Losses list, starting with the second index
+#For each index in the loop
+for cabbage in range(1,len(pl)):
+
+    #Convert the value in the index and the value in the previous index into integers
+    #Find the difference between the value in the index and the value in the previous index
+    #Store that difference in a new variable "diff"
+    #Add that difference to the diftotal variable
+    #Overwrite the currently stored diftotal with this sum
+    diff = (int(pl[cabbage])-int(pl[cabbage-1]))
+    diftotal = diftotal + diff
+
+    #Add one to the number of differences we calculated
+    numdiff = numdiff + 1
+
+#Print the sum of the differences
+print(diftotal)
+
+#Print the number of differences we calculated
+print(numdiff)
+
+#Calculate the average change rounded to two decimals
+#Store the average change in a new variable "avgchng"
+avgchng = round(diftotal/numdiff, 2)
+
+#Print the average change
+print(f"Average change: ${avgchng}")
+
 
 # Create two empty lists
 # Read the csv and append the values in the empty list
