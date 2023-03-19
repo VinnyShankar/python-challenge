@@ -4,6 +4,7 @@ import csv
 #specify the filepath
 filepath = "Resources/election_data.csv"
 
+#Start the row count at zero
 rows = 0
 
 #Open the csv
@@ -15,9 +16,14 @@ with open(filepath) as csvfile:
     #Store the header
     csvheader = next(csvreader)
 
+    #Print the header (test)
     print(csvheader)
 
-    for row in open(filepath):
+    #Loop through each row of the open csv file
+    #For each row in the open csv file
+    for row in csvfile:
+
+        #Add one to the row counter
         rows = rows + 1
     
     print(rows)
