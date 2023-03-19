@@ -1,3 +1,11 @@
+#Script to analyze the company Profit/Loss Data
+
+#We are working with a csv file so we need to import the csv module
+import csv
+
+#Specify the location of the csv file we are trying to examine
+file_path = "budget_data.csv"
+
 # Create two empty lists
 # Read the csv and append the values in the empty list
 # Count the number of indices in one of the lists
