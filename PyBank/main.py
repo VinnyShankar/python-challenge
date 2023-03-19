@@ -14,8 +14,8 @@ date = []
 #The "pl" list will hold the Profit/Losses column values from the csv
 pl = []
 
-#Open the csv and store it in a new variable "csvfile"
-with open(file_path) as csvfile:
+#Open the csv in read mode and store it in a new variable "csvfile"
+with open(file_path,'r') as csvfile:
 
     #Read the file with comma as delimiter and store it in a new variable "csvreader"
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -104,21 +104,25 @@ for cabbage in range(1,len(pl)):
 #Store the average change in a new variable "avgchng"
 avgchng = round(diftotal/numdiff, 2)
 
-#Print the summary header
-print("Financial Analysis")
-print("----------------------------")
+#Store the Profit/Loss analysis in a variable
 
-#Print how many months are in the Date list
-print(f"Total Months: {len(date)}")
+pl_analysis = (f"\nFinancial Analysis"
+"\n----------------------------"
 
-#Print the total sum of the values in the Profit/Losses list
-print(f"Total: ${total}")
+#Number of months in the .csv file
+f"\nTotal Months: {len(date)}"
+
+#Total sum of the values in the Profit/Losses list
+f"\nTotal: ${total}"
 
 #Print the average change
-print(f"Average change: ${avgchng}")
+f"\nAverage change: ${avgchng}"
 
 #Print the greatest increase in profits month and value
-print(f"Greatest Increase in Profits: {greatestincreasemonth} (${greatestincrease})")
+f"\nGreatest Increase in Profits: {greatestincreasemonth} (${greatestincrease})"
 
 #Print the greatest decrease in profits month and value
-print(f"Greatest Decrease in Profits: {greatestdecreasemonth} (${greatestdecrease})")
+f"\nGreatest Decrease in Profits: {greatestdecreasemonth} (${greatestdecrease})"
+)
+
+print(pl_analysis)
