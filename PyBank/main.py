@@ -6,6 +6,14 @@ import csv
 #Specify the location of the csv file we are trying to examine
 file_path = "Resources/budget_data.csv"
 
+#Create two empty lists into which we will store the csv data
+
+#This list will hold the Date column values from the csv
+date = []
+
+#This list will hold the Profit/Losses column values from the csv
+pl = []
+
 #Open the csv and store it in a new variable csvfile
 with open(file_path) as csvfile:
 
@@ -15,11 +23,28 @@ with open(file_path) as csvfile:
     #For each row in the variable, print it to the terminal
     #for row in csvreader:
         #print(row)
-#Skip the header row by using the 'next' function (skip this step if there is no header)
+
+    #Skip the header row by using the 'next' function (skip this step if there is no header)
     csv_header = next(csvreader)
 
     #Print the header
-    print(f"CSV Header: {csv_header}")
+    #print(f"CSV Header: {csv_header}")
+
+    #Loop through each row of data in the csv file we just read
+    #For each row in the loop
+    for row in csvreader:
+
+        #Print the first index (index 0) to the Date list
+        date.append(row[0])
+
+        #Print the second index (index 1) to the Profit/Losses list
+        pl.append(row[1])
+    
+    #Print the list of Dates
+    print(date)
+
+    #Print the list of Profit/Losses
+    print(pl)
 
 # Create two empty lists
 # Read the csv and append the values in the empty list
