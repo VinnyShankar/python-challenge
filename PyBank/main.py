@@ -43,9 +43,6 @@ with open(file_path) as csvfile:
 
         #Print the second index (index 1) to the Profit/Losses list
         pl.append(row[1])
-    
-    #Print how many months are in the Date list
-    print(f"Total Months: {len(date)}")
 
 #Create a variable to store the sum of the items in the Profit/Losses list
 total = 0
@@ -58,9 +55,6 @@ for cabbage in range(0, len(pl)):
     #Add that integer to the current "total" variable
     #Overwrite the current "total" with this sum
     total = total + int(pl[cabbage])
-
-#Print the total sum of the values in the Profit/Losses list
-print(f"Total: ${total}")
 
     #Print the list of Dates
     #print(date)
@@ -128,6 +122,16 @@ for cabbage in range(1,len(pl)):
 #Calculate the average change rounded to two decimals
 #Store the average change in a new variable "avgchng"
 avgchng = round(diftotal/numdiff, 2)
+
+#Print the summary header
+print("Financial Analysis")
+print("----------------------------")
+
+#Print how many months are in the Date list
+print(f"Total Months: {len(date)}")
+
+#Print the total sum of the values in the Profit/Losses list
+print(f"Total: ${total}")
 
 #Print the average change
 print(f"Average change: ${avgchng}")
