@@ -20,16 +20,9 @@ with open(file_path) as csvfile:
     #Read the file with comma as delimiter and store it in a new variable "csvreader"
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    #For each row in the variable "csvreader", print it to the terminal
-    #for row in csvreader:
-        #print(row)
-
     #Use the "next" function on "csvreader" to store the header in a new variable "csv_header"
     #This step lets us skip the header for all subsequent data analysis
     csv_header = next(csvreader)
-
-    #Print the header
-    #print(f"CSV Header: {csv_header}")
 
     #Example:
     #row1: 0,1
@@ -55,12 +48,6 @@ for cabbage in range(0, len(pl)):
     #Add that integer to the current "total" variable
     #Overwrite the current "total" with this sum
     total = total + int(pl[cabbage])
-
-    #Print the list of Dates
-    #print(date)
-
-    #Print the list of Profit/Losses
-    #print(pl)
 
 #Create a variable to store the sum of the differences from the Profit/Losses list
 diftotal = 0
@@ -113,12 +100,6 @@ for cabbage in range(1,len(pl)):
     #Add one to the number of differences we calculated
     numdiff = numdiff + 1
 
-#Print the sum of the differences
-#print(diftotal)
-
-#Print the number of differences we calculated
-#print(numdiff)
-
 #Calculate the average change rounded to two decimals
 #Store the average change in a new variable "avgchng"
 avgchng = round(diftotal/numdiff, 2)
@@ -141,30 +122,3 @@ print(f"Greatest Increase in Profits: {greatestincreasemonth} (${greatestincreas
 
 #Print the greatest decrease in profits month and value
 print(f"Greatest Decrease in Profits: {greatestdecreasemonth} (${greatestdecrease})")
-
-
-# Create two empty lists
-# Read the csv and append the values in the empty list
-# Count the number of indices in one of the lists
-
-#Read the csv file
-#Create a list using the second column (Profit/Loss list)
-#Count the number of indices in the Profit/Loss list
-
-#Create a dictionary with the headers as the keys
-
-#Sum the objects in the Profit/List list
-
-#Loop through the values and calculate the difference at each step of the loop
-
-#Create a variable to track the greatest increase in p/l
-#Create a variable to track the month with the greatest increase in p/l
-
-#Create a variable to track the greatest decrease in p/l
-#Create a variable to track the month with the greatest decrease in p/l
-
-#Write the analysis to a file (use .txt or .md etc)
-
-#Dictionary
-#Key0: object, object, object
-#Key1: object, object, object
