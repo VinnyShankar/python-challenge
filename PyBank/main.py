@@ -105,8 +105,7 @@ for cabbage in range(1,len(pl)):
 avgchng = round(diftotal/numdiff, 2)
 
 #Store the Profit/Loss analysis in a variable
-
-pl_analysis = (f"\nFinancial Analysis"
+pl_analysis = (f"Financial Analysis"
 "\n----------------------------"
 
 #Number of months in the .csv file
@@ -115,14 +114,24 @@ f"\nTotal Months: {len(date)}"
 #Total sum of the values in the Profit/Losses list
 f"\nTotal: ${total}"
 
-#Print the average change
+#Average of the differences
 f"\nAverage change: ${avgchng}"
 
-#Print the greatest increase in profits month and value
+#Greatest increase in profits value and the matching month
 f"\nGreatest Increase in Profits: {greatestincreasemonth} (${greatestincrease})"
 
-#Print the greatest decrease in profits month and value
+#Greatest decrease in profits value and the matching month
 f"\nGreatest Decrease in Profits: {greatestdecreasemonth} (${greatestdecrease})"
 )
 
+#Print the Profit/Losses analysis to the terminal
 print(pl_analysis)
+
+#We need to print the analysis to a text file
+#This text file will be in a different folder from the .csv we analyzed
+#Specify the path for the text file
+text_path = "analysis/results.txt"
+
+#Use the open function to 
+with open(text_path, "w") as f:
+    f.write(pl_analysis)
