@@ -40,11 +40,27 @@ with open(file_path) as csvfile:
         #Print the second index (index 1) to the Profit/Losses list
         pl.append(row[1])
     
+    #Print how many months are in the Date list
+    print(len(date))
+
+#Create a variable to store the sum of the items in the Profit/Losses list
+total = 0
+
+#For each index in the Profit/Losses list
+for cabbage in range(0, len(pl)):
+
+    #Convert the value in that index to an integer
+    #and add that integer to the "total" variable
+    total = total + int(pl[cabbage])
+
+#Print the total sum of the values in the Profit/Losses list
+print(total)
+
     #Print the list of Dates
-    print(date)
+    #print(date)
 
     #Print the list of Profit/Losses
-    print(pl)
+    #print(pl)
 
 # Create two empty lists
 # Read the csv and append the values in the empty list
