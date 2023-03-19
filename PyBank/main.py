@@ -4,7 +4,17 @@
 import csv
 
 #Specify the location of the csv file we are trying to examine
-file_path = "budget_data.csv"
+file_path = "Resources/budget_data.csv"
+
+#Open the csv and store it in a new variable csvfile
+with open(file_path) as csvfile:
+
+    #Read the file with comma as delimiter and store it in a new variable csvreader
+    csvreader = csv.reader(csvfile, delimiter=',')
+
+    #For each row in the variable, print it to the terminal
+    for row in csvreader:
+        print(row)
 
 # Create two empty lists
 # Read the csv and append the values in the empty list
