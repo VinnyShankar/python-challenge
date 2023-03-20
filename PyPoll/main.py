@@ -17,9 +17,12 @@ with open(csvpath, 'r') as csvfile:
     unique = {}
 
     #Loop through the csv and store unique candidates in a dictionary
-    for vote in csvreader:
-        if vote[2] not in unique:
-            unique[str(vote[2])] = 0
-    
-    for candidate in unique:
-        print(candidate)
+    for candidate in csvreader:
+        if candidate[2] not in unique:
+            unique[str(candidate[2])] = 0
+        #if candidate[2] in unique:
+            #unique[str(candidate[2])] 
+
+    for candidate,votes in unique.items():
+        print(f"{candidate}: {votes}")
+        
