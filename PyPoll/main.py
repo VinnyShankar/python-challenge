@@ -48,10 +48,10 @@ with open(csvpath, 'r') as csvfile:
     #Specify the location of the .txt file where we will print the results
     text_path = "analysis/results.txt"
 
-    #Open the file
+    #Open the file in write  mode
     with open(text_path, 'w') as f:
 
-        #Print the results
+        #Write the results in the file
         f.write("Election Results")
         f.write("\n-------------------------")
         f.write(f"\nTotal Votes: {total}")

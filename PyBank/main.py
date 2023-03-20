@@ -1,7 +1,7 @@
-#Import csv module
+#Import the csv module
 import csv
 
-#Specify csv file path
+#Specify the file path
 file_path = "Resources/budget_data.csv"
 
 #List of Dates
