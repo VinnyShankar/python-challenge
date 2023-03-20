@@ -19,15 +19,18 @@ with open(csvpath, 'r') as csvfile:
     #Loop through the csv
     for candidate in csvreader:
 
-        #Store unique Candidates in a dictionary with 1 starting vote
+        #Store unique candidates in a dictionary with 1 vote each
         if candidate[2] not in unique:
             unique[str(candidate[2])] = 1
         
-        #Add 1 to a Candidate's vote count each time their name re-appears in the csv
+        #Add 1 to a candidate's vote count each time their name re-appears in the csv
         elif candidate[2] in unique:
             unique[str(candidate[2])] = unique[str(candidate[2])] + 1
+    
+    total = sum(unique.values())
+    print(total)
 
     #Print the
     for candidate,votes in unique.items():
-        print(f"{candidate}: {votes}")
+        print(f"{candidate}: {round(((votes/total)*100), 3)}% ({votes})")
         
