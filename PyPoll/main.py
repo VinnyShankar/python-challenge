@@ -13,7 +13,7 @@ with open(csvpath, 'r') as csvfile:
     #Store and skip the header
     csvheader = next(csvreader)
 
-    #Dictionary of unique candidates
+    #Dictionary to store unique candidates and their vote counts
     unique = {}
 
     #Loop through the csv
@@ -27,10 +27,20 @@ with open(csvpath, 'r') as csvfile:
         elif candidate[2] in unique:
             unique[str(candidate[2])] = unique[str(candidate[2])] + 1
     
+    #Calculate the total number of votes
     total = sum(unique.values())
-    print(total)
 
-    #Print the
+    #Find the candidate with the most votes
+    winner = max(unique, key=unique.get)
+
+    #Print the election results
+    print("Election Results")
+    print("-------------------------")
+    print(f"Total Votes: {total}")
+    print("-------------------------")
     for candidate,votes in unique.items():
-        print(f"{candidate}: {round(((votes/total)*100), 3)}% ({votes})")
-        
+        percentage = round(((votes/total)*100), 3)
+        print(f"{candidate}: {percentage}% ({votes})")
+    print("-------------------------")
+    print(f"Winner: {winner}")
+    print("-------------------------")
