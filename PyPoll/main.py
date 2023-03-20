@@ -4,8 +4,7 @@ import csv
 #specify the filepath
 filepath = "Resources/election_data.csv"
 
-#Start the row count at zero
-rows = 0
+candidates = []
 
 #Open the csv
 with open(filepath) as csvfile:
@@ -21,12 +20,32 @@ with open(filepath) as csvfile:
 
     #Loop through each row of the open csv file
     #For each row in the open csv file
-    for row in csvfile:
+    for row in csvreader:
 
-        #Add one to the row counter
-        rows = rows + 1
+        #Add the candidate to the list of candidates
+        candidates.append(row[2])
     
-    print(rows)
+    print(f"{len(candidates)}")
+
+    # initialize a null list
+    unique_list = []
+
+    # traverse for all elements
+    for x in candidates:
+        # check if exists in unique_list or not
+        if x not in unique_list:
+            unique_list.append(x)
+    # print list
+    for x in unique_list:
+        print(x)
+
+election_analysis = ("Election results"
+"\n-------------------------"
+f"\nTotal Votes: {len(candidates)}"
+"\n-------------------------"
+)
+
+print(election_analysis)
 
 
 #Count the total number of votes (just like number of months from the budget csv)
