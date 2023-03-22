@@ -22,11 +22,14 @@ with open(file_path,'r') as csvfile:
     #Loop through the csv
     for row in csvreader:
 
-        #Print index 0 to the list of Dates
+        #Append index 0 to the list of Dates
         date.append(row[0])
 
-        #Print index 1 to the list of Profit/Losses
+        #Append index 1 to the list of Profit/Losses
         pl.append(row[1])
+
+#Store the number of months
+total_months = len(date)
 
 #Store the sum of the Profit/Losses
 total = 0
@@ -89,20 +92,10 @@ avgchng = round(diftotal/numdiff, 2)
 #Store the Profit/Loss analysis in a variable
 pl_analysis = (f"Financial Analysis"
 "\n----------------------------"
-
-#Number of months in the .csv file
-f"\nTotal Months: {len(date)}"
-
-#Total sum of the values in the Profit/Losses list
+f"\nTotal Months: {total_months}"
 f"\nTotal: ${total}"
-
-#Average of the differences
 f"\nAverage change: ${avgchng}"
-
-#Greatest increase in profits and the matching month
 f"\nGreatest Increase in Profits: {greatestincreasemonth} (${greatestincrease})"
-
-#Greatest decrease in profits and the matching month
 f"\nGreatest Decrease in Profits: {greatestdecreasemonth} (${greatestdecrease})"
 )
 

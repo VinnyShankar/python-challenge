@@ -33,17 +33,25 @@ with open(csvpath, 'r') as csvfile:
     #Find the candidate with the most votes
     winner = max(unique, key=unique.get)
 
-    #Print the election results to the terminal
-    print("Election Results")
-    print("-------------------------")
-    print(f"Total Votes: {total}")
-    print("-------------------------")
+    #Store the candidate results in the variable "results"
+    results = ""
     for candidate,votes in unique.items():
         percentage = round(((votes/total)*100), 3)
-        print(f"{candidate}: {percentage}% ({votes})")
-    print("-------------------------")
-    print(f"Winner: {winner}")
-    print("-------------------------")
+        results = results + f"{candidate}: {percentage}% ({votes})\n"
+
+    #Store the election analysis in a variable
+    election_analysis = (f"Election Results"
+    "\n----------------------------"
+    f"\nTotal Votes: {total}"
+    "\n-------------------------"
+    f"\n{results}"
+    "-------------------------"
+    f"\nWinner: {winner}"
+    "\n-------------------------"
+    )
+
+    #Print the election analysis to the terminal
+    print(election_analysis)
 
     #Specify the location of the .txt file where we will print the results
     text_path = "analysis/results.txt"
@@ -52,13 +60,4 @@ with open(csvpath, 'r') as csvfile:
     with open(text_path, 'w') as f:
 
         #Write the results in the file
-        f.write("Election Results")
-        f.write("\n-------------------------")
-        f.write(f"\nTotal Votes: {total}")
-        f.write("\n-------------------------")
-        for candidate,votes in unique.items():
-            percentage = round(((votes/total)*100), 3)
-            f.write(f"\n{candidate}: {percentage}% ({votes})")
-        f.write("\n-------------------------")
-        f.write(f"\nWinner: {winner}")
-        f.write("\n-------------------------")
+        f.write(election_analysis)
