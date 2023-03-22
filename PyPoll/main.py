@@ -41,7 +41,7 @@ with open(csvpath, 'r') as csvfile:
 
     #Store the election analysis in a variable
     election_analysis = (f"Election Results"
-    "\n----------------------------"
+    "\n-------------------------"
     f"\nTotal Votes: {total}"
     "\n-------------------------"
     f"\n{results}"
