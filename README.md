@@ -3,6 +3,9 @@
 ### - Overview
 - Module 3 Python Challenge files
 - Author: Vinny Shankar
+- Acknowledgements:
+- Instructor: Ahmad Sweed assisted with printing to terminal
+- Tutor: Bethany Lindberg reviewed and okayed before submission
 - Program: University of California Berkeley Data Analytics Bootcamp
 ### - Contents
 - Folder 1 - PyBank: 1 python script, 1 .csv data file, 1 .txt results file
