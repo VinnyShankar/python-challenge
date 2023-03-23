@@ -5,8 +5,8 @@
 - Author: Vinny Shankar
 - Program: University of California Berkeley Data Analytics Bootcamp
 ### - Contents
-- Folder PyBank: 1 python script, 1 .csv data file, 1 .txt results file
-- Folder PyPoll: 1 python script, 1 .csv data file, 1 .txt results file
+- Folder 1 - PyBank: 1 python script, 1 .csv data file, 1 .txt results file
+- Folder 2 - PyPoll: 1 python script, 1 .csv data file, 1 .txt results file
 - This README.md file
 ### - Description:
 - The python scripts analyze their respective .csv data files and summarize the results into the terminal and into new .txt files
