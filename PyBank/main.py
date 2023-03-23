@@ -26,19 +26,13 @@ with open(file_path,'r') as csvfile:
         date.append(row[0])
 
         #Append index 1 to the list of Profit/Losses
-        pl.append(row[1])
+        pl.append(int(row[1]))
 
 #Store the number of months
 total_months = len(date)
 
 #Store the sum of the Profit/Losses
-total = 0
-
-#Loop through the list of Profit/Losses
-for cabbage in range(0, len(pl)):
-
-    #Add each value to the total Profit/Losses
-    total = total + int(pl[cabbage])
+total = sum(pl)
 
 #Store the sum of the differences in Profit/Losses
 diftotal = 0
@@ -84,7 +78,7 @@ for cabbage in range(1,len(pl)):
         greatestdecreasemonth = str(date[cabbage])
 
     #Add one to how many differences we calculated
-    numdiff = numdiff + 1
+    numdiff += 1
 
 #Calculate the average change rounded to two decimals
 avgchng = round(diftotal/numdiff, 2)

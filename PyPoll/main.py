@@ -25,7 +25,7 @@ with open(csvpath, 'r') as csvfile:
         
         #Add 1 to a candidate's vote count each time their name re-appears in the csv
         elif candidate[2] in unique:
-            unique[str(candidate[2])] = unique[str(candidate[2])] + 1
+            unique[str(candidate[2])] += 1
     
     #Calculate the total number of votes
     total = sum(unique.values())
